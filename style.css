@@ -35,7 +35,7 @@ h1 {
 .column .color-value {
   position: absolute; /* Position buttons at bottom */
   bottom: 45px;
-  left: 70%;
+  left: 50%;
   color: #ccc;
   transform: translateX(-50%); /* Center buttons horizontally */
   margin: 0 5px; /* Add some spacing between buttons */
@@ -45,7 +45,16 @@ h1 {
 .column .color-picker {
   position: absolute; /* Position buttons at bottom */
   bottom: 10px;
-  left: 70%;
+  left: 50%;
+  transform: translateX(-50%); /* Center buttons horizontally */
+  margin: 0 5px; /* Add some spacing between buttons */
+}
+
+.column .eye-dropper {
+  fill: #ccc;
+  position: absolute; /* Position buttons at bottom */
+  bottom: 10px;
+  left: 80%;
   transform: translateX(-50%); /* Center buttons horizontally */
   margin: 0 5px; /* Add some spacing between buttons */
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EyeDropper Color Picker</title>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+
+      </li>
+      <li>
+        <a href="eyedropper.html">Eye Dropper</a>
+      </li>
+    </ul>
+  </nav>
+
+  <button id="pickColorButton">Pick Color</button>
+  <div id="color-display"></div>
+
+  <script>
+    const pickColorButton = document.getElementById('pickColorButton');
+    const colorDisplay = document.getElementById('color-display');
+
+    pickColorButton.addEventListener('click', async () => {
+      if (!window.EyeDropper) {
+        colorDisplay.textContent = 'EyeDropper API not supported.';
+        return;
+      }
+
+      try {
+        const eyeDropper = new window.EyeDropper();
+        const color = await eyeDropper.open();
+        colorDisplay.style.backgroundColor = color.sRGBHex;
+        colorDisplay.textContent = `Picked Color: ${color.sRGBHex}`;
+
+        // color.addEventListener('mousemove', (event) => {
+
+        //   colorDisplay.style.backgroundColor = event.color.sRGBHex;
+        //   colorDisplay.textContent = `Picked Color: ${event.color.sRGBHex}`;
+
+        // });
+
+
+      } catch (err) {
+        console.error('Error using EyeDropper:', err);
+        colorDisplay.textContent = 'Failed to pick color.';
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>
