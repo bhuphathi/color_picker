@@ -19,8 +19,8 @@ function createColumn(color) {
   deleteButton.classList.add('delete-button');
   newColumn.appendChild(deleteButton);
 
-  // Add event listener to change column background on color picker change
-  colorPicker.addEventListener('change', (event) => {
+  // Add event listener to update column background color on input change
+  colorPicker.addEventListener('input', (event) => {
     newColumn.style.backgroundColor = event.target.value;
   });
 
