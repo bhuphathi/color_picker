@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.column-container {
+  display: flex;
+  /* Flexbox for columns */
+  flex-wrap: nowrap; /* All columns in a single row */
+}
+
+.column {
+  width: 25%; /* Adjust width as needed */
+  min-height: 200px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* To position delete button */
+  height: 75vh; /* Set height as 90 viewport height (optional) */
+}
+
+.column .color-picker {
+  margin-top: 10px;
+}
+
+.column .delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
