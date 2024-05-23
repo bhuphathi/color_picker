@@ -32,6 +32,16 @@ h1 {
   flex: 1; /* Take up remaining space */
 }
 
+.column .color-value {
+  position: absolute; /* Position buttons at bottom */
+  bottom: 45px;
+  left: 70%;
+  color: #ccc;
+  transform: translateX(-50%); /* Center buttons horizontally */
+  margin: 0 5px; /* Add some spacing between buttons */
+}
+
+
 .column .color-picker {
   position: absolute; /* Position buttons at bottom */
   bottom: 10px;
