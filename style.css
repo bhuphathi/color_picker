@@ -14,9 +14,9 @@ h1 {
 }
 
 .column {
-  width: 25%; /* Adjust width as needed */
+  width: 10%; /* Adjust width as needed */
   min-height: 200px;
-  margin: 10px;
+  margin: 2px;
   padding: 20px;
   text-align: center;
   border-radius: 5px;
@@ -28,16 +28,28 @@ h1 {
   height: 75vh; /* Set height as 90 viewport height (optional) */
 }
 
+.column .content { /* Container for main content */
+  flex: 1; /* Take up remaining space */
+}
+
 .column .color-picker {
-  margin-top: 10px;
+  position: absolute; /* Position buttons at bottom */
+  bottom: 10px;
+  left: 70%;
+  transform: translateX(-50%); /* Center buttons horizontally */
+  margin: 0 5px; /* Add some spacing between buttons */
 }
 
 .column .delete-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 10px;
+  left: 10px;
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#addColumnButton {
+  margin: 10px;
 }
