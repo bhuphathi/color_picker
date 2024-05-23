@@ -96,13 +96,14 @@ function setColumnColor(columnElement, colorValueElement, colorPicker, colorValu
 
 function rgbaToHex(rgbaString) {
   const rgbValues = rgbaString.match(/(\d+),\s*(\d+),\s*(\d+)/);
+  let result = rgbListToHex(rgbValues)
   console.log("rgbValues", rgbValues);
-  console.log("detectedHex", rgbListToHex(rgbValues));
+  console.log("detectedHex", result);
   //to fix error in browser color picker
   let redValue = rgbValues[1] <= 251 ? parseInt(rgbValues[1]) + 1 : rgbValues[1];
   let greenValue = rgbValues[2] <= 251 ? parseInt(rgbValues[2]) : rgbValues[2];
-  let blueValue = rgbValues[3] <= 251 ? parseInt(rgbValues[3]) + 1 : rgbValues[3];
-  const result = rgbListToHex(["", redValue, greenValue, blueValue])
+  let blueValue = rgbValues[3] <= 251 ? parseInt(rgbValues[3]) : rgbValues[3];
+  result = rgbListToHex(["", redValue, greenValue, blueValue])
   console.log("setHex", result);
 
   return result;
